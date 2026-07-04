@@ -1,0 +1,10 @@
+{
+  "selector": "aerostuff:static_wheel",
+
+  "properties": {
+    "sable:restitution": 0.5,
+    "sable:friction": 0.1
+  }
+}
+
+

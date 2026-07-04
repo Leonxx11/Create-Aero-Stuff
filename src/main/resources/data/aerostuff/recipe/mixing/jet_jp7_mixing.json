@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:naphtha"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:kerosene"
+    }
+  ],
+  "results": [
+    {
+      "amount": 750,
+      "id": "aerostuff:jet_jp7"
+    }
+  ]
+}

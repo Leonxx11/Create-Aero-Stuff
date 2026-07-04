@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "aerostuff:item/jet_jp7_bucket"
+  }
+}

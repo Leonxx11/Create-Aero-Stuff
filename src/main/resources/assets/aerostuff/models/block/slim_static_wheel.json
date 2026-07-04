@@ -1,0 +1,44 @@
+{
+	"credit": "Made with love by dear IamLeonxx",
+	"textures": {
+		"side": "aerostuff:block/static_wheel_side",
+		"front": "aerostuff:block/slim_static_wheel_1",
+		"particle": "aerostuff:block/slim_static_wheel_1"
+	},
+	"elements": [
+		{
+			"from": [2, 0, 0],
+			"to": [14, 16, 16],
+			"faces": {
+				"north": {
+					"uv": [2, 0, 14, 16],
+					"texture": "#front",
+					"rotation": 0
+				},
+				"south": {
+					"uv": [2, 0, 14, 16],
+					"texture": "#front",
+					"rotation": 180
+				},
+				"east": {
+					"uv": [0, 0, 16, 16],
+					"texture": "#side"
+				},
+				"west": {
+					"uv": [0, 0, 16, 16],
+					"texture": "#side"
+				},
+				"up": {
+					"uv": [2, 0, 14, 16],
+					"texture": "#front",
+					"rotation": 180
+				},
+				"down": {
+					"uv": [2, 0, 14, 16],
+					"texture": "#front",
+					"rotation": 180
+				}
+			}
+		}
+	]
+}

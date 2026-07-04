@@ -1,0 +1,18 @@
+{
+  "parent": "aerostuff:block/slim_static_wheel",
+  "display": {
+    "gui": {
+      "rotation": [30, 315, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 135, 0],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "thirdperson_righthand": {
+      "rotation": [75, 135, 0],
+      "scale": [0.375, 0.375, 0.375]
+    }
+  }
+}

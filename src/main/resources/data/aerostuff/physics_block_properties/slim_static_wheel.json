@@ -1,0 +1,11 @@
+{
+  "selector": "aerostuff:slim_static_wheel",
+
+  "properties": {
+    "sable:restitution": 0.5,
+    "sable:friction": 0.1,
+    "sable:mass": 0.7
+  }
+}
+
+

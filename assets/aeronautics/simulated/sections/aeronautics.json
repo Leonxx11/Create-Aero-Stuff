@@ -1,0 +1,9 @@
+{
+  "priority": 1000,
+  "title": {
+    "text": { "translate": "aeronautics.simulated_section.aerostuff" },
+    "background": "#bb001e3c"
+  },
+  "sprite": "aeronautics:banner",
+  "only_animate_on_hover": true
+}

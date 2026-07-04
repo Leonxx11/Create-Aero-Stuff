@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "aerostuff:block/slim_static_wheel" },
+    "facing=south": { "model": "aerostuff:block/slim_static_wheel", "y": 180 },
+    "facing=east":  { "model": "aerostuff:block/slim_static_wheel", "y": 90 },
+    "facing=west":  { "model": "aerostuff:block/slim_static_wheel", "y": 270 }
+  }
+}
