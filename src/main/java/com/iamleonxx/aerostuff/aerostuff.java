@@ -1,7 +1,6 @@
 package com.iamleonxx.aerostuff;
 
 import com.iamleonxx.aerostuff.Blocks.ModBlocks;
-import com.iamleonxx.aerostuff.AeroStuffCreativeTab;
 import com.iamleonxx.aerostuff.Fluids.ModFluids;
 import com.iamleonxx.aerostuff.Items.ModItems;
 import com.mojang.logging.LogUtils;
@@ -21,7 +20,7 @@ public class aerostuff {
 
     public aerostuff(IEventBus modEventBus, ModContainer modContainer) {
 
-        // register stuff for the mod here
+        // registry do rzeczy z moda
         ModBlocks.BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         ModFluids.FLUIDS.register(modEventBus);
@@ -30,15 +29,14 @@ public class aerostuff {
 
         AeroStuffCreativeTab.registerAeronauticsSections();
 
-        // do not remove this line, idk why it exist but just leave ts alone.
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.register(this);
 
-        //Client logger thingy
+        // wiadomość w logu na cliencie i serwerze
         modEventBus.addListener(this::onClientSetup);
     }
 
     private void onClientSetup(FMLClientSetupEvent event) {
-        LOGGER.info("Leonxx is the goat");
+        LOGGER.info("IamLeonxx is the goat");
     }
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {

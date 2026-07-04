@@ -2,10 +2,12 @@ package com.iamleonxx.aerostuff.Blocks;
 
 import com.iamleonxx.aerostuff.aerostuff;
 import com.iamleonxx.aerostuff.Items.ModItems;
+import dev.propulsionteam.propulsionsimulated.content.thruster.thruster.ThrusterBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -27,6 +29,12 @@ public class ModBlocks {
             () -> new SlimStaticWheel(
                     BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
             )
+    );
+
+    public static final DeferredBlock<ThrusterBlock> SONIC_THRUSTER = BLOCKS.register(
+            "sonic_thruster",
+            () -> new ThrusterBlock(
+                    Block.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().sound(SoundType.METAL).strength(5.5f, 4.0f).noOcclusion())
     );
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
