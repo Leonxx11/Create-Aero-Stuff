@@ -19,7 +19,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class ModFluids {
     private static final String JET_A1_DESCRIPTION = "fluid." + aerostuff.MOD_ID + ".jet_a1";
-    private static final String JET_JP7_DESCRIPTION = "fluid." + aerostuff.MOD_ID + ".jet_a1";
+    private static final String JET_JP7_DESCRIPTION = "fluid." + aerostuff.MOD_ID + ".jet_jp7";
 
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, aerostuff.MOD_ID);
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, aerostuff.MOD_ID);
