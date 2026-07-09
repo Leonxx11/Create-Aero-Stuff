@@ -1,0 +1,5 @@
+{
+  "fluid": "aerostuff:jet_a1",
+  "thrust_multiplier": 1.5,
+  "consumption_multiplier": 0.9
+}
