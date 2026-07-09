@@ -2,7 +2,7 @@
   "priority": 100000,
   "title": {
     "text": { "translate": "simulated.simulated_section.aerostuff_main" },
-    "background": "#aa1f2f3a",
+    "background": "#ff0219c9",
     "color": "#ffffffff",
     "secondary_color": "#ffcfd8dc"
   },
