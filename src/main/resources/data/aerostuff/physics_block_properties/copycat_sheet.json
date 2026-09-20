@@ -1,0 +1,8 @@
+{
+  "selector": "aerostuff:copycat_sheet",
+
+  "properties": {
+    "sable:mass": 0.15,
+    "sable:volume": 0.15
+  }
+}

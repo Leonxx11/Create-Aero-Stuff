@@ -1,0 +1,83 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "aerostuff:copycat_sheet",
+          "properties": { "up": "true" }
+        }
+      ],
+      "entries": [{ "type": "minecraft:item", "name": "aerostuff:copycat_sheet" }],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "aerostuff:copycat_sheet",
+          "properties": { "down": "true" }
+        }
+      ],
+      "entries": [{ "type": "minecraft:item", "name": "aerostuff:copycat_sheet" }],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "aerostuff:copycat_sheet",
+          "properties": { "north": "true" }
+        }
+      ],
+      "entries": [{ "type": "minecraft:item", "name": "aerostuff:copycat_sheet" }],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "aerostuff:copycat_sheet",
+          "properties": { "south": "true" }
+        }
+      ],
+      "entries": [{ "type": "minecraft:item", "name": "aerostuff:copycat_sheet" }],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "aerostuff:copycat_sheet",
+          "properties": { "east": "true" }
+        }
+      ],
+      "entries": [{ "type": "minecraft:item", "name": "aerostuff:copycat_sheet" }],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" },
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "aerostuff:copycat_sheet",
+          "properties": { "west": "true" }
+        }
+      ],
+      "entries": [{ "type": "minecraft:item", "name": "aerostuff:copycat_sheet" }],
+      "rolls": 1
+    }
+  ]
+}

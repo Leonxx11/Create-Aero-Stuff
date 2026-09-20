@@ -8,6 +8,7 @@
   "block.aerostuff.jet_jp7": "Jet JP-7",
   "block.aerostuff.static_wheel": "Static Wheel",
   "block.aerostuff.slim_static_wheel": "Slim Static Wheel",
+  "block.aerostuff.copycat_sheet": "Copycat Sheet",
   "item.aerostuff.static_wheel.tooltip.summary": "A _bouncy_ wheel that has little to no _friction_, perfect for airplanes.",
   "item.aerostuff.slim_static_wheel.tooltip.summary": "A _bouncy_ wheel that has little to no _friction_, perfect for airplanes."
 }
