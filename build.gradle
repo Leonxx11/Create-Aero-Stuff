@@ -154,7 +154,7 @@ dependencies {
     implementation "dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}"
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
     implementation "dev.simulated_team.simulated:simulated-neoforge-1.21.1:1.2.1"
-    implementation "maven.modrinth:ApkoHNO9:hTnJ29I0"
+    implementation "maven.modrinth:UT2M39wf:bPYeUWZx"
 
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
     implementation "io.github.llamalad7:mixinextras-neoforge:0.4.1"

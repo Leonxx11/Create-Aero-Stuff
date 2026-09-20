@@ -6,7 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,60 +16,67 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 @EventBusSubscriber(modid = aerostuff.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class ForgeEvents {
 
-    // Fluids-lava interaction
-
     @SubscribeEvent
     public static void onNeighborBlockUpdate(BlockEvent.NeighborNotifyEvent event) {
         LevelAccessor level = event.getLevel();
         BlockPos pos = event.getPos();
-        BlockState state = level.getBlockState(pos);
+        FluidState fluid = level.getFluidState(pos);
 
-        if (state.getFluidState().isEmpty()) {
+        if (fluid.isEmpty()) {
             return;
         }
 
-        boolean isJET_A1 = state.getFluidState().is(ModFluids.JET_A1.get());
-        boolean isLava = state.getFluidState().is(Fluids.LAVA) || state.getFluidState().is(Fluids.FLOWING_LAVA);
+        boolean isLava =
+                fluid.is(Fluids.LAVA) ||
+                        fluid.is(Fluids.FLOWING_LAVA);
 
-        if (!isJET_A1 && !isLava) {
+        boolean isJetA1 =
+                fluid.is(ModFluids.JET_A1.get()) ||
+                        fluid.is(ModFluids.FLOWING_JET_A1.get());
+
+        boolean isJetJP7 =
+                fluid.is(ModFluids.JET_JP7.get()) ||
+                        fluid.is(ModFluids.FLOWING_JET_JP7.get());
+
+        if (!isLava && !isJetA1 && !isJetJP7) {
             return;
         }
 
-        for (Direction dir : Direction.values()) {
-            BlockPos neighborPos = pos.relative(dir);
+        for (Direction direction : Direction.values()) {
+            BlockPos neighborPos = pos.relative(direction);
             FluidState neighborFluid = level.getFluidState(neighborPos);
 
-            if (isJET_A1 && (neighborFluid.is(Fluids.LAVA) || neighborFluid.is(Fluids.FLOWING_LAVA))) {
+            boolean neighborIsLava =
+                    neighborFluid.is(Fluids.LAVA) ||
+                            neighborFluid.is(Fluids.FLOWING_LAVA);
+
+            boolean neighborIsJetA1 =
+                    neighborFluid.is(ModFluids.JET_A1.get()) ||
+                            neighborFluid.is(ModFluids.FLOWING_JET_A1.get());
+
+            boolean neighborIsJetJP7 =
+                    neighborFluid.is(ModFluids.JET_JP7.get()) ||
+                            neighborFluid.is(ModFluids.FLOWING_JET_JP7.get());
+
+            // Jet A-1 / flowing Jet A-1 + lava / flowing lava -> Stone
+            if (isJetA1 && neighborIsLava) {
                 level.setBlock(pos, Blocks.STONE.defaultBlockState(), 3);
                 return;
             }
 
-            if (isLava && neighborFluid.is(ModFluids.JET_A1.get())) {
+            if (isLava && neighborIsJetA1) {
                 level.setBlock(neighborPos, Blocks.STONE.defaultBlockState(), 3);
                 return;
             }
-        }
-        if (state.getFluidState().isEmpty()) {
-            return;
-        }
 
-        boolean isJET_JP7 = state.getFluidState().is(ModFluids.JET_JP7.get());
-
-        if (!isJET_JP7 && !isLava) {
-            return;
-        }
-
-        for (Direction dir : Direction.values()) {
-            BlockPos neighborPos = pos.relative(dir);
-            FluidState neighborFluid = level.getFluidState(neighborPos);
-
-            if (isJET_A1 && (neighborFluid.is(Fluids.LAVA) || neighborFluid.is(Fluids.FLOWING_LAVA))) {
-                level.setBlock(pos, Blocks.STONE.defaultBlockState(), 3);
+            // Jet JP-7 / flowing Jet JP-7 + lava / flowing lava -> Andesite
+            if (isJetJP7 && neighborIsLava) {
+                level.setBlock(pos, Blocks.ANDESITE.defaultBlockState(), 3);
                 return;
             }
 
-            if (isLava && neighborFluid.is(ModFluids.JET_JP7.get())) {
-                level.setBlock(neighborPos, Blocks.STONE.defaultBlockState(), 3);
+            if (isLava && neighborIsJetJP7) {
+                level.setBlock(neighborPos, Blocks.ANDESITE.defaultBlockState(), 3);
                 return;
             }
         }
