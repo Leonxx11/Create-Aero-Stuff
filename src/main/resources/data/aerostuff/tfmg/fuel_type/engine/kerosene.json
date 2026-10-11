@@ -1,0 +1,5 @@
+{
+  "fluids": ["aerostuff:jet_a1", "aerostuff:jet_jp7"],
+  "speed": 0.7,
+  "torque": 1.4
+}

@@ -7,6 +7,10 @@ import com.copycatsplus.copycats.foundation.tooltip.CopycatCharacteristics;
 import com.copycatsplus.copycats.foundation.tooltip.CopycatDescription;
 import com.iamleonxx.aerostuff.Items.ModItems;
 import com.iamleonxx.aerostuff.aerostuff;
+import com.simibubi.create.content.decoration.copycat.CopycatPanelModel;
+import com.simibubi.create.content.decoration.copycat.CopycatStepModel;
+import com.simibubi.create.foundation.data.BuilderTransformers;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.TooltipModifier;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
@@ -14,6 +18,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -53,6 +58,39 @@ public class ModBlocks {
                             CopycatDescription.create(item)
                     ))
                     .transform(customItemModel("copycat_base", "sheet"))
+                    .register();
+
+    public static final BlockEntry<CopycatGrabHandleBlock> COPYCAT_GRABHANDLE =
+            aerostuff.REGISTRATE.block("copycat_grabhandle", CopycatGrabHandleBlock::new)
+                    .properties(p -> p.forceSolidOn())
+                    .transform(BuilderTransformers.copycat())
+                    .onRegister(CreateRegistrate.blockModel(() -> CopycatStepModel::new))
+                    .item()
+                    .transform(customItemModel("copycat_base", "step"))
+                    .register();
+
+    public static final BlockEntry<InvisibleGrabHandleBlock> INVISIBLE_GRABHANDLE =
+            aerostuff.REGISTRATE.block("invisible_grabhandle", InvisibleGrabHandleBlock::new)
+                    .initialProperties(() -> Blocks.IRON_BLOCK)
+                    .properties(p -> p.noOcclusion()
+                            .strength(1.5F, 6.0F)
+                            .sound(SoundType.METAL)
+                            .isSuffocating((state, level, pos) -> false)
+                            .isViewBlocking((state, level, pos) -> false)
+                            .isRedstoneConductor((state, level, pos) -> false))
+                    .item()
+                    .transform(customItemModel("copycat_base", "panel"))
+                    .register();
+
+    public static final BlockEntry<AntiblastCopycatPanelBlock> ANTIBLAST_COPYCAT_LAYER =
+            aerostuff.REGISTRATE.block("antiblast_copycat_layer", AntiblastCopycatPanelBlock::new)
+                    .transform(BuilderTransformers.copycat())
+                    .properties(p -> p.destroyTime(50.0F)
+                            .explosionResistance(1200.0F)
+                            .requiresCorrectToolForDrops())
+                    .onRegister(CreateRegistrate.blockModel(() -> CopycatPanelModel::new))
+                    .item()
+                    .transform(customItemModel("copycat_base", "panel"))
                     .register();
 
     public static final DeferredBlock<Block> STATIC_WHEEL = registerBlock(
