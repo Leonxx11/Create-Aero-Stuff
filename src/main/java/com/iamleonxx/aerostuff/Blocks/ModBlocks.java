@@ -8,7 +8,6 @@ import com.copycatsplus.copycats.foundation.tooltip.CopycatDescription;
 import com.iamleonxx.aerostuff.Items.ModItems;
 import com.iamleonxx.aerostuff.aerostuff;
 import com.simibubi.create.content.decoration.copycat.CopycatPanelModel;
-import com.simibubi.create.content.decoration.copycat.CopycatStepModel;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.TooltipModifier;
