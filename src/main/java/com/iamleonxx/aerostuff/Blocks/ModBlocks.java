@@ -60,17 +60,8 @@ public class ModBlocks {
                     .transform(customItemModel("copycat_base", "sheet"))
                     .register();
 
-    public static final BlockEntry<CopycatGrabHandleBlock> COPYCAT_GRABHANDLE =
-            aerostuff.REGISTRATE.block("copycat_grabhandle", CopycatGrabHandleBlock::new)
-                    .properties(p -> p.forceSolidOn())
-                    .transform(BuilderTransformers.copycat())
-                    .onRegister(CreateRegistrate.blockModel(() -> CopycatStepModel::new))
-                    .item()
-                    .transform(customItemModel("copycat_base", "step"))
-                    .register();
-
-    public static final BlockEntry<InvisibleGrabHandleBlock> INVISIBLE_GRABHANDLE =
-            aerostuff.REGISTRATE.block("invisible_grabhandle", InvisibleGrabHandleBlock::new)
+    public static final BlockEntry<InvisibleHandleBlock> INVISIBLE_HANDLE =
+            aerostuff.REGISTRATE.block("invisible_handle", InvisibleHandleBlock::new)
                     .initialProperties(() -> Blocks.IRON_BLOCK)
                     .properties(p -> p.noOcclusion()
                             .strength(1.5F, 6.0F)

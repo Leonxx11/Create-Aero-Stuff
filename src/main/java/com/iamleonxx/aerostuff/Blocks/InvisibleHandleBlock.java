@@ -1,7 +1,6 @@
 package com.iamleonxx.aerostuff.Blocks;
 
 import com.mojang.serialization.MapCodec;
-import com.simibubi.create.AllShapes;
 
 import dev.simulated_team.simulated.content.blocks.handle.HandleBlock;
 import net.minecraft.core.BlockPos;
@@ -18,22 +17,37 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class InvisibleGrabHandleBlock extends HandleBlock {
+public class InvisibleHandleBlock extends HandleBlock {
 
-	public static final MapCodec<InvisibleGrabHandleBlock> CODEC = simpleCodec(InvisibleGrabHandleBlock::new);
+	public static final MapCodec<InvisibleHandleBlock> CODEC = simpleCodec(InvisibleHandleBlock::new);
 
-	public InvisibleGrabHandleBlock(Properties properties) {
+	private static final VoxelShape THIN_SHAPE_NORTH = Block.box(0, 0, 15, 16, 16, 16);
+	private static final VoxelShape THIN_SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 1);
+	private static final VoxelShape THIN_SHAPE_WEST  = Block.box(15, 0, 0, 16, 16, 16);
+	private static final VoxelShape THIN_SHAPE_EAST  = Block.box(0, 0, 0, 1, 16, 16);
+	private static final VoxelShape THIN_SHAPE_UP    = Block.box(0, 0, 0, 16, 1, 16);
+	private static final VoxelShape THIN_SHAPE_DOWN  = Block.box(0, 15, 0, 16, 16, 16);
+
+	public InvisibleHandleBlock(Properties properties) {
 		super(properties, null, Variant.IRON);
 	}
 
 	@Override
 	public BlockEntityType getBlockEntityType() {
-		return ModBlockEntities.INVISIBLE_GRABHANDLE.get();
+		return ModBlockEntities.INVISIBLE_HANDLE.get();
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return AllShapes.CASING_3PX.get(state.getValue(FACING));
+		Direction facing = state.getValue(FACING);
+		return switch (facing) {
+			case NORTH -> THIN_SHAPE_NORTH;
+			case SOUTH -> THIN_SHAPE_SOUTH;
+			case WEST  -> THIN_SHAPE_WEST;
+			case EAST  -> THIN_SHAPE_EAST;
+			case UP    -> THIN_SHAPE_UP;
+			case DOWN  -> THIN_SHAPE_DOWN;
+		};
 	}
 
 	@Override

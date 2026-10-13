@@ -9,6 +9,9 @@
   "block.aerostuff.static_wheel": "Static Wheel",
   "block.aerostuff.slim_static_wheel": "Slim Static Wheel",
   "block.aerostuff.copycat_sheet": "Copycat Sheet",
+  "block.aerostuff.invisible_handle": "Invisible Handle",
+  "block.aerostuff.antiblast_copycat_panel": "Antiblast Copycat Panel",
   "item.aerostuff.static_wheel.tooltip.summary": "A _bouncy_ wheel that has little to no _friction_, perfect for airplanes.",
-  "item.aerostuff.slim_static_wheel.tooltip.summary": "A _bouncy_ wheel that has little to no _friction_, perfect for airplanes."
+  "item.aerostuff.slim_static_wheel.tooltip.summary": "A _bouncy_ wheel that has little to no _friction_, perfect for airplanes.",
+  "item.aerostuff.antiblast_copycat_panel.tooltip.summary": "_Copycat Panel_ with same _blast resistance_ as _obsidian_."
 }

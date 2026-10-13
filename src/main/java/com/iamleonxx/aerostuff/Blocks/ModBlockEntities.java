@@ -15,16 +15,10 @@ public class ModBlockEntities {
 					.validBlocks(ModBlocks.COPYCAT_SHEET)
 					.register();
 
-	public static final BlockEntityEntry<CopycatGrabHandleBlockEntity> COPYCAT_GRABHANDLE =
+	public static final BlockEntityEntry<HandleBlockEntity> INVISIBLE_HANDLE =
 			aerostuff.REGISTRATE
-					.blockEntity("copycat_grabhandle", CopycatGrabHandleBlockEntity::new)
-					.validBlocks(ModBlocks.COPYCAT_GRABHANDLE)
-					.register();
-
-	public static final BlockEntityEntry<HandleBlockEntity> INVISIBLE_GRABHANDLE =
-			aerostuff.REGISTRATE
-					.blockEntity("invisible_grabhandle", HandleBlockEntity::new)
-					.validBlocks(ModBlocks.INVISIBLE_GRABHANDLE)
+					.blockEntity("invisible_handle", HandleBlockEntity::new)
+					.validBlocks(ModBlocks.INVISIBLE_HANDLE)
 					.register();
 
 	public static final BlockEntityEntry<CopycatBlockEntity> ANTIBLAST_COPYCAT_PANEL =
