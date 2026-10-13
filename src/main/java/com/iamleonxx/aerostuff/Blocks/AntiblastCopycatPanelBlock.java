@@ -61,8 +61,6 @@ public class AntiblastCopycatPanelBlock extends CopycatPanelBlock {
 		return Blocks.OBSIDIAN.defaultBlockState().canEntityDestroy(level, pos, entity);
 	}
 
-	// === PLACEMENT ASSIST (skopiowane z CopycatPanelBlock) ===
-
 	@Override
 	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 		if (!player.isShiftKeyDown() && player.mayBuild()) {
@@ -77,8 +75,6 @@ public class AntiblastCopycatPanelBlock extends CopycatPanelBlock {
 		return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
 	}
 
-	// === HITBOX / KOLIZJA ===
-
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		return super.getShape(state, level, pos, context);
@@ -88,8 +84,6 @@ public class AntiblastCopycatPanelBlock extends CopycatPanelBlock {
 	public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		return Shapes.empty();
 	}
-
-	// === PLACEMENT HELPER (skopiowane z CopycatPanelBlock) ===
 
 	@MethodsReturnNonnullByDefault
 	private static class PlacementHelper implements IPlacementHelper {
