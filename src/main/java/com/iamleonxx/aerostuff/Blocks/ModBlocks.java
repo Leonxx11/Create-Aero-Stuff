@@ -82,8 +82,8 @@ public class ModBlocks {
                     .transform(customItemModel("copycat_base", "panel"))
                     .register();
 
-    public static final BlockEntry<AntiblastCopycatPanelBlock> ANTIBLAST_COPYCAT_LAYER =
-            aerostuff.REGISTRATE.block("antiblast_copycat_layer", AntiblastCopycatPanelBlock::new)
+    public static final BlockEntry<AntiblastCopycatPanelBlock> ANTIBLAST_COPYCAT_PANEL =
+            aerostuff.REGISTRATE.block("antiblast_copycat_panel", AntiblastCopycatPanelBlock::new)
                     .transform(BuilderTransformers.copycat())
                     .properties(p -> p.destroyTime(50.0F)
                             .explosionResistance(1200.0F)

@@ -19,7 +19,7 @@ public class AntiblastCopycatPanelBlock extends CopycatPanelBlock {
 
 	@Override
 	public BlockEntityType getBlockEntityType() {
-		return ModBlockEntities.ANTIBLAST_COPYCAT_LAYER.get();
+		return ModBlockEntities.ANTIBLAST_COPYCAT_PANEL.get();
 	}
 
 	@Override

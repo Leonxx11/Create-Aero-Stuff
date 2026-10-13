@@ -27,10 +27,10 @@ public class ModBlockEntities {
 					.validBlocks(ModBlocks.INVISIBLE_GRABHANDLE)
 					.register();
 
-	public static final BlockEntityEntry<CopycatBlockEntity> ANTIBLAST_COPYCAT_LAYER =
+	public static final BlockEntityEntry<CopycatBlockEntity> ANTIBLAST_COPYCAT_PANEL =
 			aerostuff.REGISTRATE
-					.blockEntity("antiblast_copycat_layer", CopycatBlockEntity::new)
-					.validBlocks(ModBlocks.ANTIBLAST_COPYCAT_LAYER)
+					.blockEntity("antiblast_copycat_panel", CopycatBlockEntity::new)
+					.validBlocks(ModBlocks.ANTIBLAST_COPYCAT_PANEL)
 					.register();
 
 	public static void register() {
